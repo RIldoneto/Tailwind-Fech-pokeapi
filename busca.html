@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéMundi - Busca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-950 text-white min-h-screen">
+
+    <header class="bg-blue-900 p-4">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 text-2xl font-bold">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1280px-Pok%C3%A9_Ball_icon.svg.png" 
+                     alt="logo" class="w-8 h-8">
+                PokéMundi
+            </a>
+            <a href="index.html" class="text-lg hover:text-yellow-400">← Voltar</a>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto p-6">
+        <h1 class="text-3xl font-bold text-center my-8">Painel de Pesquisa</h1>
+
+        <div class="max-w-lg mx-auto">
+            <input type="text" id="pokemonName" 
+                   class="w-full p-4 rounded-full bg-slate-800 border border-slate-600 focus:border-yellow-400 outline-none text-lg"
+                   placeholder="Digite o nome do Pokémon...">
+            
+            <button onclick="fetchData()" 
+                    class="w-full mt-4 bg-yellow-400 text-black font-bold py-4 rounded-full text-lg">
+                Buscar Pokémon
+            </button>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Status -->
+            <div class="bg-slate-900 rounded-2xl p-6">
+                <h3 class="text-xl font-bold mb-4 text-blue-400">Status</h3>
+                <div id="status-info" class="space-y-3"></div>
+            </div>
+
+            <!-- Pokémon -->
+            <div class="bg-slate-900 rounded-3xl p-8 text-center">
+                <div class="h-64 flex items-center justify-center bg-slate-800 rounded-2xl mb-6">
+                    <img id="pokemonSprite" src="" alt="" class="max-h-56 hidden">
+                    <p id="placeholder" class="text-slate-400">Busque um Pokémon</p>
+                </div>
+                <h2 id="pokemonNameDisplay" class="text-2xl font-bold">nome</h2>
+            </div>
+
+            <!-- Movimentos -->
+            <div class="bg-slate-900 rounded-2xl p-6">
+                <h3 class="text-xl font-bold mb-4 text-blue-400">Movimentos</h3>
+                <div id="moves-info" class="space-y-2"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="core.js"></script>
+</body>
+</html>
